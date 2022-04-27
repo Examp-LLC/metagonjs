@@ -16,7 +16,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var React = require('react');
 var PropTypes = require('prop-types');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+function _interopDefault(ex) { return ex && ex.__esModule ? ex.default : ex;}; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
