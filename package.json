@@ -1,6 +1,6 @@
 {
   "name": "metagon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "METAGON NFT, powered by the Canvas API",
   "main": "metagon.js",
   "scripts": {
