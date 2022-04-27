@@ -1,7 +1,6 @@
 import sass from 'rollup-plugin-sass'
 import jsx from 'rollup-plugin-jsx'
 import typescript from 'rollup-plugin-typescript2'
-import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json'
 
@@ -19,7 +18,6 @@ export default {
     plugins: [
       sass({ insert: true }),
       typescript({  }),
-      resolve(),
       commonjs(),
       jsx( {factory: 'React.createElement'} )
     ],
