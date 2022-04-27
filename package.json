@@ -2,14 +2,19 @@
   "name": "metagon",
   "version": "0.0.3",
   "description": "METAGON NFT, powered by the Canvas API",
-  "main": "metagon.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Examp-LLC/metagonjs.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "metagon",
     "nft",
@@ -25,7 +30,15 @@
     "seedrandom": "^3.0.5"
   },
   "peerDependencies": {
-    "react": "^18.1.0",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "rollup": "^2.70.2",
+    "rollup-plugin-jsx": "^1.0.3",
+    "rollup-plugin-sass": "^1.2.12",
+    "rollup-plugin-typescript2": "^0.31.2"
   }
 }

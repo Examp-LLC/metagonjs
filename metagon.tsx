@@ -1,6 +1,7 @@
+// @ts-nocheck
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Canvas.module.css';
+import styles from './Canvas.module.scss';
 import * as seedrandom from 'seedrandom';
 
 const Metagon = (props) => {
