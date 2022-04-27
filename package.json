@@ -1,0 +1,31 @@
+{
+  "name": "metagon",
+  "version": "0.0.2",
+  "description": "METAGON NFT, powered by the Canvas API",
+  "main": "metagon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Examp-LLC/metagonjs.git"
+  },
+  "keywords": [
+    "metagon",
+    "nft",
+    "ethereum"
+  ],
+  "author": "blankey1337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Examp-LLC/metagonjs/issues"
+  },
+  "homepage": "https://github.com/Examp-LLC/metagonjs#readme",
+  "dependencies": {
+    "seedrandom": "^3.0.5",
+    "prop-types": "^15.8.1"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0"
+  }
+}
