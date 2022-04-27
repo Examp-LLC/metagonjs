@@ -1127,7 +1127,6 @@ var Metagon = function (props) {
             loop();
         }
     }
-    init();
     return (React__default["default"].createElement('div', {ref: canvasContainerRef, className: styles.wrapper}));
 };
 Metagon.propTypes = {
