@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/Examp-LLC/metagonjs#readme",
   "dependencies": {
-    "seedrandom": "^3.0.5",
-    "prop-types": "^15.8.1"
+    "seedrandom": "^3.0.5"
   },
   "peerDependencies": {
-    "react": "^18.1.0"
+    "react": "^18.1.0",
+    "prop-types": "^15.8.1"
   }
 }
