@@ -23,7 +23,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var crypto__default = /*#__PURE__*/_interopDefaultLegacy(crypto);
 
-var styles = ___$insertStyle(".wrapper {\n  height: 100%;\n  width: 100%;\n}");
+var styles = ___$insertStyle(".wrapper {\n  height: 100%;\n  min-height: 400px;\n  width: 100%;\n}");
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -979,11 +979,11 @@ seedrandom$2.tychei = tychei;
 
 var seedrandom = seedrandom$2;
 
-var seedrandom$1 = /*#__PURE__*/Object.freeze({
+var seedrandom$1 = {
   __proto__: null,
   'default': seedrandom,
   __moduleExports: seedrandom
-});
+};
 
 // @ts-nocheck
 var Metagon = function (props) {
@@ -992,7 +992,7 @@ var Metagon = function (props) {
     var score = props.score;
     var seed = props.seed || Math.random();
     var seed360 = applyRangeToRand(parseFloat(seed.toString()), 360);
-    var prng = new seedrandom(seed);
+    var prng = new seedrandom$1(seed);
     var scoreRange = 1000;
     var scoreMult = score / scoreRange;
     var startingHue = prng() * 360;
@@ -1046,7 +1046,11 @@ var Metagon = function (props) {
             generateStaticImage();
         }
     }
-    React.useEffect(function () {
+    React.useEffect(function (props) {
+        // Comment this for rendering animated promos
+        // if (canvasContainerRef.current.children.length) {
+        //   canvasContainerRef.current.textContent = '';
+        // }
         init();
     });
     function loop() {
