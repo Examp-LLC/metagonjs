@@ -79,7 +79,12 @@ const Metagon = (props) => {
 
   }
 
-  useEffect(() => {
+  useEffect((props) => {
+
+    // Comment this for rendering animated promos
+    // if (canvasContainerRef.current.children.length) {
+    //   canvasContainerRef.current.textContent = '';
+    // }
     init();
   });
 
@@ -193,7 +198,7 @@ const Metagon = (props) => {
     }
   }
 
-  init();
+
   return (
     <div ref={canvasContainerRef} className={styles.wrapper} />
   )
