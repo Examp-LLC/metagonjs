@@ -16,7 +16,7 @@ Or
   yarn add metagon
 ```
 
-## Usage/Examples
+## Usage
 
 ```javascript
 import Metagon from 'metagon'
@@ -25,6 +25,8 @@ function App() {
   return <Metagon score={420} seed={0.43231122} />
 }
 ```
+
+View more examples on [Stackblitz](https://stackblitz.com/edit/metagon-js?file=index.tsx).
 
 ## Props
 
@@ -36,6 +38,7 @@ function App() {
 | `infinite` | `boolean` | Keep drawing, even past the draw limit imposed by `score` (default: `false`) |
 | `animated` | `boolean` | Animate or render a still image (default: `true`) |
 
+
 ## Credit & License
 
-Original copyright to Matei Copot. Per the author's copyright, you are free to use this code for any lawful purpose, however, attribution must be given to the original author, Matei Copot.
+Developed by Examp. Original copyright to Matei Copot. Per the author's copyright, you are free to use this code for any lawful purpose, however, attribution must be given to the original author, Matei Copot.
