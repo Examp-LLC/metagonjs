@@ -12,9 +12,12 @@ const Metagon = (props) => {
   let seed = props.seed || Math.random();
   const seed360 = applyRangeToRand(parseFloat(seed.toString()), 360);
   const prng = new seedrandom(seed);
+  // upper bound, less relevant as scores can be higher now
+  // used for binding the first phase of metagon
   const scoreRange = 1000;
   const scoreMult = score / scoreRange;
   const startingHue = prng() * 360;
+  const dieChance = (parseInt(score) > 1300) ? .025 : .05;
 
   let w, h, context, opts, tick, lines, dieX, dieY, baseRad, bgColor;
 
@@ -37,7 +40,7 @@ const Metagon = (props) => {
       count: getCount(scoreMult), // 1-5
       baseTime: 40,
       addedTime: 10,
-      dieChance: 0.05,
+      dieChance,
       spawnChance: 1,
       sparkChance: 0.1,
       sparkDist: 30,
@@ -54,7 +57,7 @@ const Metagon = (props) => {
       cy: h / 2,
       repaintAlpha: 0,
       hueChange: 0.5,
-      duration: getDuration(scoreMult),
+      duration: getDuration(scoreMult, score),
     },
       tick = 0,
       lines = [],
@@ -214,15 +217,28 @@ Metagon.propTypes = {
 };
 
 
-export function getDuration(scoreMult) {
-  return Math.abs(1800 + 1400 * scoreMult);
+export function getDuration(scoreMult, score) {
+  let startVal = 1800;
+  let iterator = 1400;
+  if (score > 1300) {
+    startVal = 1500;
+    iterator = 1200;
+  }
+  if (score > 2000) {
+    startVal = 1000;
+    iterator = 1000;
+  }
+  return Math.abs(startVal + iterator * scoreMult);
 }
 
-export function getLen(scoreMult, seed) {
+export function getLen(scoreMult, seed, score) {
   let baseLen = 35;
   // triangles are much smaller on the screen than other shapes, embiggen them
   if (getPolygonSides(seed) === 3) {
     baseLen = 50;
+  }
+  if (score > 1300) {
+    baseLen = 15;
   }
   return baseLen + baseLen * scoreMult;
 }
@@ -234,6 +250,10 @@ export function getCount(scoreMult) {
 
 export function applyRangeToRand(num, max) {
   return Math.floor(num * max);
+}
+
+export function getRandomRange(min, max, rand) {
+  return Math.floor(rand * (max - min + 1)) + min;
 }
 
 export function getPolygonSides(seed) {
